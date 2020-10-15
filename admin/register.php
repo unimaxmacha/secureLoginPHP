@@ -1,3 +1,46 @@
+<?php
+	/* include config file */
+	require_once "config.php";
+
+	/* Define variables and initialize with empty values */
+	$fullname = $username = $email = $password = $confirm_password = $address = "";
+	$fullname_err = $username_err = $email_err = $password_err = $confirm_password_err = $address_err = "";
+
+	/* Processing form data when form is submitted. */
+	if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+		// Validate fullname
+		$input_name = trim($_POST["fullname"]);
+	    if(empty($input_name)){
+	        $fullname_err = "名前を入力してください。";
+	    } 
+	    // elseif(!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
+	    //     $name_err = "Please enter a valid name.";
+	    // } 
+	    else{
+	        $fullname = $input_name;
+	    }
+
+		// Validate username
+		$input_username = trim($_POST["username"]);
+		if(empty($input_username)) {
+			$username_err = "ユーザー名を入力してください。";
+		} else {
+			// Prepare a select statement.
+			$sql = "SELECT id FROM tbl_users WHERE username = ?";
+
+			if($stmt = $dbConn->prepare($sql)) {
+				//Bind variables to the prepared statement as parameters
+			}
+		}
+
+	} else {
+
+	}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
