@@ -139,7 +139,6 @@
     <meta charset="UTF-8">
     <title>ユーザー作成</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
