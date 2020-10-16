@@ -1,6 +1,7 @@
 <?php
 	/* include config file */
 	require_once "config.php";
+	//
 
 	/* Define variables and initialize with empty values */
 	$fullname = $username = $email = $password = $confirm_password = $address = "";
