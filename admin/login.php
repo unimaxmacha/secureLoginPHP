@@ -10,6 +10,8 @@
 
 	// Include config file
 	require_once "../includes/config.php";
+	
+	require_once('../includes/helpers.php');
 
 	// Define variables and initialize with empty values
 	$username = $password = "";
@@ -93,8 +95,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ログイン</title>
-	<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/style.css">
+	<script>
+	    var base_url  =  '<?php echo base_url()?>';
+	    var base_url_admin  =  '<?php echo base_url('admin/')?>';
+	</script>
+	<link rel="stylesheet" href="<?=base_url()?>assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="<?=base_url()?>css/style.css">
 </head>
 <body>
 	<div class="wrapper">
