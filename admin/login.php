@@ -92,18 +92,12 @@
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
-
   <meta charset="UTF-8">
-
   <title>管理者ログイン</title>
 	<link rel="stylesheet" href="<?=base_url()?>css/utils.css">
-
 </head>
-
 <body>
-
   <div class="body"></div>
 		<div class="grad"></div>
 		<div class="header">
@@ -126,7 +120,5 @@
 			</form>
 				
 		</div>
-
 </body>
-
 </html>
