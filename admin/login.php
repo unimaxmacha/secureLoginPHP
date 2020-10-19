@@ -92,36 +92,41 @@
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="UTF-8">
-	<title>ログイン</title>
-	<script>
-	    var base_url  =  '<?php echo base_url()?>';
-	    var base_url_admin  =  '<?php echo base_url('admin/')?>';
-	</script>
-	<link rel="stylesheet" href="<?=base_url()?>assets/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="<?=base_url()?>css/style.css">
+
+  <meta charset="UTF-8">
+
+  <title>管理者ログイン</title>
+	<link rel="stylesheet" href="<?=base_url()?>css/utils.css">
+
 </head>
+
 <body>
-	<div class="wrapper">
-		<h2>ログイン</h2>
-		<p>ログインするには、資格情報を入力してください。</p>
-		<form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-			<div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-				<label>ユーザー名：</label>
-				<input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-				<span class="help-block"><?php echo $username_err; ?></span>
-			</div>
-			<div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-				<label>パスワード：</label>
-				<input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
-				<span class="help-block"><?php echo $password_err; ?></span>
-			</div>
-			<div class="form-group">
-				<input type="submit" name="submit" class="btn btn-primary" value="ログイン">
-			</div>
-			<p>アカウントをお持ちではありませんか？ <a href="register.php">今すぐサインアップ</a>。</p>
-		</form>
-	</div>
+
+  <div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>管理者<span>ログイン</span></div>
+		</div>
+		<br>
+		<div class="login">
+			<form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+				<div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+					<input type="text" name="username" class="form-control" value="<?php echo $username; ?>" placeholder="ユーザー名"><br>
+					<span class="help-block"><?php echo $username_err; ?></span>
+				</div>
+				<div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+					<input type="password" name="password" class="form-control" value="<?php echo $password; ?>" placeholder="パスワード"><br>
+					<span class="help-block"><?php echo $password_err; ?></span>
+				</div>
+				<div class="form-group">
+					<input type="submit" name="submit" class="btn btn-primary" value="ログイン">
+				</div>
+			</form>
+				
+		</div>
+
 </body>
+
 </html>
