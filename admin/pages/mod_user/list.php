@@ -3,6 +3,9 @@ $heading  = "ユーザー管理";
 $m     = "user";
 $form  = "form";
 $view  = "view";
+
+$sql = "SELECT * FROM tbl_users";
+
 ?>
 <!-- Content Header (Page header) -->
 <div class="content-header">
@@ -37,15 +40,32 @@ $view  = "view";
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>スンダル・マチャマシ</td>
-            <td>admin</td>
-            <td>sundar.machamasi@sysystem.co.jp</td>
-            <td>千葉県市川市伊勢宿1-7山辺ハイツ102</td>
-            <td>2020-10-15</td>
-            <td><a href="#"><span class="fa fa-eye"></span></a>&nbsp;<a href="#"><span class="fa fa-edit"></span></a>&nbsp;<a href="#"><span class="fa fa-trash"></span></a></td>
-        </tr>
+    	<?php
+    		if ($result = $dbConn->query($sql)) {
+				if($result->num_rows > 0) { 
+					while($row = $result->fetch_array()) {// fghjklljjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+						// fghjklljjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+					}
+					?>
+					<tr>
+			            <td>1</td>
+			            <td>スンダル・マチャマシ</td>
+			            <td>admin</td>
+			            <td>sundar.machamasi@sysystem.co.jp</td>
+			            <td>千葉県市川市伊勢宿1-7山辺ハイツ102</td>
+			            <td>2020-10-15</td>
+			            <td><a href="#"><span class="fa fa-eye"></span></a>&nbsp;<a href="#"><span class="fa fa-edit"></span></a>&nbsp;<a href="#"><span class="fa fa-trash"></span></a></td>
+			        </tr>
+				<?php
+				} else {
+					echo "No record in the table.";
+				}
+			} else {
+				echo "Wrong Select Query!";
+			}
+    	?>
+        
+
         <tr>
             <td>2</td>
             <td>David</td>
@@ -67,12 +87,13 @@ $view  = "view";
     </tbody>
     <tfoot>
         <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
+            <th>S.No.</th>
+            <th>名前</th>
+            <th>ユーザー名</th>
+            <th>E－メール</th>
+            <th>住所</th>
+            <th>作成日</th>
+            <th>＃</th>
         </tr>
     </tfoot>
 </table>
