@@ -4,7 +4,7 @@
 
 	// Check if the user is already logged in, if yes then redirect to the Welcome page
 	if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-		header("location: welcome.php");
+		header("location: home.php");
 		exit;
 	}
 
@@ -68,7 +68,7 @@
 								$_SESSION["username"] = $username;
 
 								// Redirect user to welcome page
-								header("location: welcome.php");
+								header("location: home.php");
 							} else {
 								// Display an error message if password is not valid.
 								$password_err = "あなたが入力したパスワードは有効ではありませんでした。";
