@@ -40,23 +40,21 @@ $sql = "SELECT * FROM tbl_users";
         </tr>
     </thead>
     <tbody>
-    	<?php
+    	<?php $sn = 1;
     		if ($result = $dbConn->query($sql)) {
 				if($result->num_rows > 0) { 
-					while($row = $result->fetch_array()) {// fghjklljjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
-						// fghjklljjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
-					}
+					while($row = $result->fetch_array()) {
 					?>
 					<tr>
-			            <td>1</td>
-			            <td>スンダル・マチャマシ</td>
-			            <td>admin</td>
-			            <td>sundar.machamasi@sysystem.co.jp</td>
-			            <td>千葉県市川市伊勢宿1-7山辺ハイツ102</td>
-			            <td>2020-10-15</td>
+			            <td><?php echo $sn; ?></td>
+			            <td><?php echo $row['fullname']; ?></td>
+			            <td><?php echo $row['username']; ?></td>
+			            <td><?php echo $row['email']; ?></td>
+			            <td><?php echo $row['address']; ?></td>
+			            <td><?php echo $row['create_at']; ?></td>
 			            <td><a href="#"><span class="fa fa-eye"></span></a>&nbsp;<a href="#"><span class="fa fa-edit"></span></a>&nbsp;<a href="#"><span class="fa fa-trash"></span></a></td>
 			        </tr>
-				<?php
+			        <?php $sn++;}
 				} else {
 					echo "No record in the table.";
 				}
@@ -64,26 +62,6 @@ $sql = "SELECT * FROM tbl_users";
 				echo "Wrong Select Query!";
 			}
     	?>
-        
-
-        <tr>
-            <td>2</td>
-            <td>David</td>
-            <td>d_vid156</td>
-            <td>david_986wil@gmail.com</td>
-            <td>United Kindom</td>
-            <td>2020-10-15</td>
-            <td><a href="#"><span class="fa fa-eye"></span></a>&nbsp;<a href="#"><span class="fa fa-edit"></span></a>&nbsp;<a href="#"><span class="fa fa-trash"></span></a></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>सुन्दर मचामासी</td>
-            <td>unimax</td>
-            <td>unimaxmacha@gmail.com</td>
-            <td>गोल्मदि-६,भक्त्तपुर,नेपाल</td>
-            <td>2020-10-15</td>
-            <td><a href="#"><span class="fa fa-eye"></span></a>&nbsp;<a href="#"><span class="fa fa-edit"></span></a>&nbsp;<a href="#"><span class="fa fa-trash"></span></a></td>
-        </tr>
     </tbody>
     <tfoot>
         <tr>
